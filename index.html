@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VIS Website Concepts</title>
+<meta name="description" content="Four homepage design concepts for the new Vinay International School website.">
+<link rel="icon" href="assets/logo-mark.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600&family=Manrope:wght@400;500;600;700&family=Tiro+Devanagari+Sanskrit&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#F6F4EF; --surface:#FFFFFF; --ink:#11203A; --muted:#5B6578; --line:#E3DFD5;
+    --blue:#0786AE; --yellow:#F5E31A; --saffron:#F07B0A;
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){ --bg:#0D1422; --surface:#151E30; --ink:#EEF1F6; --muted:#9AA5B8; --line:#26324A; }
+  }
+  :root[data-theme="dark"]{ --bg:#0D1422; --surface:#151E30; --ink:#EEF1F6; --muted:#9AA5B8; --line:#26324A; }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{background:var(--bg);color:var(--ink);font:16px/1.6 Manrope,system-ui,sans-serif;-webkit-font-smoothing:antialiased}
+  a{color:inherit}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
+  header.top{padding:28px 0;border-bottom:1px solid var(--line)}
+  header.top .wrap{display:flex;align-items:center;gap:14px;justify-content:space-between}
+  .brand{display:flex;align-items:center;gap:12px;text-decoration:none}
+  .brand img{width:44px;height:44px}
+  .brand b{display:block;font-weight:500;letter-spacing:.18em;font-size:18px}
+  .brand span{display:block;font-size:12px;color:var(--muted);letter-spacing:.04em}
+  .tag{font-size:12px;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+  .intro{padding:72px 0 40px;display:grid;grid-template-columns:1.3fr 1fr;gap:48px;align-items:end}
+  .intro h1{font-family:Fraunces,serif;font-weight:400;font-size:clamp(40px,6vw,76px);line-height:1.02;letter-spacing:-.02em}
+  .intro h1 em{font-style:italic;color:var(--blue)}
+  .intro p{color:var(--muted);max-width:46ch}
+  .motto{font-family:'Tiro Devanagari Sanskrit',serif;font-size:22px;color:var(--saffron);margin-bottom:14px}
+  .grid{display:grid;grid-template-columns:repeat(2,1fr);gap:28px;padding:24px 0 80px}
+  .card{background:var(--surface);border:1px solid var(--line);border-radius:22px;overflow:hidden;display:flex;flex-direction:column;transition:transform .35s cubic-bezier(.2,.7,.2,1),box-shadow .35s}
+  .card:hover{transform:translateY(-6px);box-shadow:0 24px 60px -24px rgba(17,32,58,.35)}
+  .shot{position:relative;aspect-ratio:16/10;overflow:hidden;background:#dfe4ea}
+  .shot img{width:100%;height:100%;object-fit:cover;object-position:top;display:block;transition:transform 6s ease}
+  .card:hover .shot img{transform:scale(1.04)}
+  .num{position:absolute;top:16px;left:16px;background:rgba(255,255,255,.92);color:#11203A;border-radius:999px;padding:6px 14px;font-size:12px;font-weight:700;letter-spacing:.12em}
+  .body{padding:26px 26px 28px;display:flex;flex-direction:column;gap:14px;flex:1}
+  .body h2{font-family:Fraunces,serif;font-weight:600;font-size:30px;line-height:1.1}
+  .body h2 small{display:block;font-family:Manrope,sans-serif;font-size:13px;font-weight:600;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-bottom:6px}
+  .body p{color:var(--muted)}
+  .sw{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+  .sw i{width:26px;height:26px;border-radius:50%;border:1px solid rgba(0,0,0,.08);display:inline-block}
+  .sw span{font-size:13px;color:var(--muted);margin-left:6px}
+  ul.feat{list-style:none;display:grid;gap:6px;font-size:14.5px}
+  ul.feat li{padding-left:20px;position:relative}
+  ul.feat li::before{content:"";position:absolute;left:0;top:.62em;width:8px;height:8px;border-radius:2px;background:var(--blue);transform:rotate(45deg)}
+  .actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:auto;padding-top:8px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:12px 18px;border-radius:12px;font-weight:700;font-size:14px;text-decoration:none;border:1px solid var(--line)}
+  .btn.primary{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+  .btn:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+  .common{border-top:1px solid var(--line);padding:56px 0 72px}
+  .common h3{font-family:Fraunces,serif;font-weight:400;font-size:32px;margin-bottom:22px}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chips span{background:var(--surface);border:1px solid var(--line);border-radius:999px;padding:8px 14px;font-size:14px}
+  footer{border-top:1px solid var(--line);padding:28px 0 40px;color:var(--muted);font-size:13px}
+  @media (max-width:900px){ .intro{grid-template-columns:1fr;gap:20px;padding-top:48px} .grid{grid-template-columns:1fr} }
+  @media (max-width:520px){ .wrap{padding:0 16px} .body{padding:22px 18px} .tag{display:none} }
+  @media (prefers-reduced-motion:reduce){ *{transition:none!important} }
+</style>
+</head>
+<body>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#"><img src="assets/logo-mark.svg" alt=""><div><b>VINAY</b><span>International School · Morbi</span></div></a>
+    <div class="tag">Website redesign · Design concepts</div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="intro">
+    <div>
+      <div class="motto">॥ विद्या विनय सम्पन्ने ॥</div>
+      <h1>Four ways to tell the <em>Vinay</em> story.</h1>
+    </div>
+    <p>Each concept is a fully working homepage built from the 2026-27 brochure, with a loading animation, live notice board, admission enquiry, careers and contact. Open them on a laptop and a phone, then choose the direction that feels most like VIS. We can also combine elements from different concepts.</p>
+  </section>
+
+  <section class="grid" aria-label="Design concepts">
+    <article class="card">
+      <div class="shot"><span class="num">CONCEPT 01</span><img src="screens/thumb-1.jpg" alt="Preview of the Heritage concept homepage" loading="lazy"></div>
+      <div class="body">
+        <h2><small>Heritage Editorial</small>“Vidya”</h2>
+        <p>Dignified and premium. Ivory paper, navy ink and saffron-gold, with temple-arch image frames and chapters numbered like the brochure. It says “prestigious institution rooted in Indian values.”</p>
+        <div class="sw"><i style="background:#F7F2E8"></i><i style="background:#0E1F3A"></i><i style="background:#E8811A"></i><i style="background:#B8913A"></i><span>Fraunces · Manrope</span></div>
+        <ul class="feat"><li>Loader: the Sanskrit motto writes itself, pillars rise, temple doors open</li><li>Horizontal-scroll journey from Nursery to Std. 12</li><li>Arch-framed leadership portraits</li></ul>
+        <div class="actions"><a class="btn primary" href="mockup-1-heritage/index.html">Open live mockup →</a><a class="btn" href="screens/mockup-1-desktop.jpg">Full-page image</a><a class="btn" href="screens/mockup-1-mobile.jpg">Mobile</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="shot"><span class="num">CONCEPT 02</span><img src="screens/thumb-2.jpg" alt="Preview of the Spectrum concept homepage" loading="lazy"></div>
+      <div class="body">
+        <h2><small>Happy Vinayans</small>“Spectrum”</h2>
+        <p>Joyful and full of energy. Every section carries its brochure chapter colour, “3000+” is filled with real student photos, and sticker badges float around the hero. Built for parents and children to love at first sight.</p>
+        <div class="sw"><i style="background:#F07B0A"></i><i style="background:#0A9BE0"></i><i style="background:#E8507A"></i><i style="background:#8CC152"></i><i style="background:#F5D33B"></i><span>Bricolage Grotesque · DM Sans</span></div>
+        <ul class="feat"><li>Loader: the smile draws in and a counter runs to 3000+</li><li>Header colour changes with every chapter</li><li>A sticker wall of 40+ SKILLkari programmes</li></ul>
+        <div class="actions"><a class="btn primary" href="mockup-2-spectrum/index.html">Open live mockup →</a><a class="btn" href="screens/mockup-2-desktop.jpg">Full-page image</a><a class="btn" href="screens/mockup-2-mobile.jpg">Mobile</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="shot"><span class="num">CONCEPT 03</span><img src="screens/thumb-3.jpg" alt="Preview of the Cinematic concept homepage" loading="lazy"></div>
+      <div class="body">
+        <h2><small>Campus Universe</small>“Cinematic”</h2>
+        <p>Bold and immersive. A dark, film-like experience with full-screen campus imagery, glowing statistics and an interactive 10-acre campus map. It positions VIS as Gujarat's most ambitious school.</p>
+        <div class="sw"><i style="background:#070B14"></i><i style="background:#0B1730"></i><i style="background:#3FC1F0"></i><i style="background:#F5C84B"></i><span>Unbounded · Inter Tight</span></div>
+        <ul class="feat"><li>Loader: the campus assembles from a blueprint, then the camera flies in</li><li>Clickable campus map with every block explained</li><li>A medal vault with 833 medals counting up</li></ul>
+        <div class="actions"><a class="btn primary" href="mockup-3-cinematic/index.html">Open live mockup →</a><a class="btn" href="screens/mockup-3-desktop.jpg">Full-page image</a><a class="btn" href="screens/mockup-3-mobile.jpg">Mobile</a></div>
+      </div>
+    </article>
+
+    <article class="card">
+      <div class="shot"><span class="num">CONCEPT 04</span><img src="screens/thumb-4.jpg" alt="Preview of the Bento concept homepage" loading="lazy"></div>
+      <div class="body">
+        <h2><small>Clarity</small>“Bento”</h2>
+        <p>Crisp, modern and trustworthy. The school's own blue with a yellow highlighter, organised into neat tiles so parents find everything in seconds. The cleanest and most practical option.</p>
+        <div class="sw"><i style="background:#FFFFFF"></i><i style="background:#0786AE"></i><i style="background:#062F42"></i><i style="background:#F5E31A"></i><span>Plus Jakarta Sans</span></div>
+        <ul class="feat"><li>Loader: the logo fills like water and becomes the header</li><li>3-step admission wizard and searchable notice board</li><li>Facilities explorer with tabs for sports, arts and labs</li></ul>
+        <div class="actions"><a class="btn primary" href="mockup-4-bento/index.html">Open live mockup →</a><a class="btn" href="screens/mockup-4-desktop.jpg">Full-page image</a><a class="btn" href="screens/mockup-4-mobile.jpg">Mobile</a></div>
+      </div>
+    </article>
+  </section>
+
+  <section class="common">
+    <h3>Included in every concept</h3>
+    <div class="chips">
+      <span>Opening loader animation</span><span>Admission enquiry form</span><span>Notice board with categories</span><span>Careers with online application</span>
+      <span>Purpose · Vision · Mission</span><span>Leadership team</span><span>Pre-School to Std. 12 journey</span><span>Flagship programmes (Taiyari Jeet Ki, Vi-CCC…)</span>
+      <span>Interactive campus map</span><span>Sports, arts and future-tech labs</span><span>40+ SKILLkari programmes</span><span>4 Houses &amp; 6 Clubs</span>
+      <span>Culture &amp; Values</span><span>Asia Book of Records</span><span>Champions &amp; results</span><span>Gallery</span><span>Contact &amp; map</span><span>Fully mobile responsive</span>
+    </div>
+  </section>
+</main>
+<footer><div class="wrap">Vinay International School · CBSE Affiliation No. 430313 · Ravapar-Ghunda Road, Morbi · Design concepts for discussion. Notices and job listings shown are sample content.</div></footer>
+</body>
+</html>

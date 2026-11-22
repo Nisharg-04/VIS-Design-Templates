@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" role="img" aria-label="Vinay International School">
+  <defs>
+    <linearGradient id="vg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#8fd3f0"/>
+      <stop offset="1" stop-color="#1590c4"/>
+    </linearGradient>
+  </defs>
+  <rect x="3" y="3" width="114" height="114" rx="16" fill="url(#vg)"/>
+  <rect x="3" y="3" width="114" height="114" rx="16" fill="none" stroke="#fff" stroke-width="5"/>
+  <g fill="#fff">
+    <!-- pediment -->
+    <path d="M60 18 L98 40 H22 Z"/>
+    <!-- four figures as pillars, arms raised holding the roof -->
+    <g id="f">
+      <circle cx="33" cy="51" r="5"/>
+      <path d="M24 44 Q26 58 31 60 L31 88 H35 L35 60 Q40 58 42 44 L39.5 44 Q37 55 33 56.5 Q29 55 26.5 44 Z"/>
+    </g>
+    <use href="#f" x="18"/>
+    <use href="#f" x="36"/>
+    <use href="#f" x="54"/>
+    <!-- base -->
+    <path d="M20 90 H100 L103 99 H17 Z"/>
+  </g>
+</svg>
